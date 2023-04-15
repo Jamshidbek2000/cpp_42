@@ -1,16 +1,11 @@
-NAME = phonebook
+NAME = harl
 CC = g++
 RM = rm -rf
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -MD
 
 SRC		=	main \
-			str_manipulation \
-			Contact \
-			PhoneBook \
-			
+			Harl \
 
-HEADERS	=	includes/Contact.hpp \
-			includes/PhoneBook.hpp \
 
 SRC_DIR = src/
 OBJ_DIR = objects/
@@ -21,7 +16,7 @@ OBJS = $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC)))
 
 all: $(NAME) 
 
-$(NAME): $(OBJS) $(HEADERS)
+$(NAME): $(OBJS)
 	@$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.cpp

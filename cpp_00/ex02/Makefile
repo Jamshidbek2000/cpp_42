@@ -1,16 +1,12 @@
-NAME = phonebook
+NAME = account
 CC = g++
 RM = rm -rf
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC		=	main \
-			str_manipulation \
-			Contact \
-			PhoneBook \
+SRC		=	tests \
+			Account
 			
-
-HEADERS	=	includes/Contact.hpp \
-			includes/PhoneBook.hpp \
+HEADERS	=	includes/Account.hpp \
 
 SRC_DIR = src/
 OBJ_DIR = objects/

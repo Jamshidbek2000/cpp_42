@@ -2,6 +2,10 @@
 #	define CONTACT_HPP
 
 #include <iostream>
+#include <iomanip> // needed for std::setw()
+#include <cstdlib> // exit
+#include <sstream> // stringstream
+
 
 class	Contact{
 private:

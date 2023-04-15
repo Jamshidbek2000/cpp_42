@@ -5,6 +5,10 @@ Contact::Contact(void) : _name(""), _surname(""), _nickname(""), _secret(""), _p
 
 Contact::~Contact(void){}
 
+// ************************************************************************** //
+//                               SETTERS                                      //
+// ************************************************************************** //
+
 bool	Contact::set_name(const std::string name)
 {
 	if (name.empty())
@@ -45,15 +49,19 @@ bool	Contact::set_phone_number(const std::string phone_number)
 	return (true);
 }
 
+// ************************************************************************** //
+//                               GETTERS                                      //
+// ************************************************************************** //
+
 std::string	Contact::get_name(void) const {return (_name);}
-
 std::string	Contact::get_surname(void) const {return (_surname);}
-
 std::string	Contact::get_nickname(void) const {return (_nickname);}
-
 std::string	Contact::get_secret(void) const {return (_secret);}
-
 std::string	Contact::get_phone_number(void) const {return (_phone_number);}
+
+// ************************************************************************** //
+//                               OPERATOR OVERWRITING                         //
+// ************************************************************************** //
 
 std::ostream& operator<<(std::ostream& os, const Contact& contact)
 {
@@ -61,7 +69,7 @@ std::ostream& operator<<(std::ostream& os, const Contact& contact)
 	os << "\tName: " << contact.get_name() << std::endl;
 	os << "\tSurname: " << contact.get_surname() << std::endl;
 	os << "\tNickname: " << contact.get_nickname() << std::endl;
-	os << "\tSecret: " << contact.get_secret() << std::endl;
+	os << "\tDarkest secret: " << contact.get_secret() << std::endl;
 	os << "\tPhone number: " << contact.get_phone_number() << std::endl;
     return os;
 }
