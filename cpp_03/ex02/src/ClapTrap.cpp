@@ -14,9 +14,32 @@ ClapTrap::ClapTrap(std::string const & name) : _name(name), _hit_points(10), _en
 	std::cout << "ClapTrap " << _name << " was constructed" << std::endl;
 }
 
+ClapTrap::ClapTrap(ClapTrap const & rhs)
+{
+	std::cout << "ClapTrap " << "Copy constructor called" << std::endl;
+	*this = rhs;
+}
+
 ClapTrap::~ClapTrap()
 {
 	std::cout << "ClapTrap " << _name << " was destructed" << std::endl;
+}
+
+// ************************************************************************** //
+//                               OPERATOR OVERLOAD                            //
+// ************************************************************************** //
+
+ClapTrap&	ClapTrap::operator=(ClapTrap const & rhs)
+{
+	std::cout << "Assignment operator called" << std::endl;
+	if (this != &rhs)
+	{
+		_name = rhs._name;
+		_hit_points = rhs._hit_points;
+		_energy_points = rhs._energy_points;
+		_attack_damage = rhs._attack_damage;
+	}
+	return (*this);
 }
 
 // ************************************************************************** //

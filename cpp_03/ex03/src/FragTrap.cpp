@@ -25,6 +25,28 @@ FragTrap::~FragTrap()
 	std::cout << "FragTrap: " << _name << " was destructed" << std::endl;
 }
 
+FragTrap::FragTrap(FragTrap const & rhs)
+{
+	std::cout << "FragTrap " << "copy constructor called" << std::endl;
+	*this = rhs;
+}
+
+// ************************************************************************** //
+//                               OPERATOR OVERLOAD                            //
+// ************************************************************************** //
+
+FragTrap&	FragTrap::operator=(FragTrap const & rhs)
+{
+	std::cout << "Assignment operator called" << std::endl;
+	if (this != &rhs)
+	{
+		_name = rhs._name;
+		_hit_points = rhs._hit_points;
+		_energy_points = rhs._energy_points;
+		_attack_damage = rhs._attack_damage;
+	}
+	return (*this);
+}
 
 // ************************************************************************** //
 //                               REST                                         //

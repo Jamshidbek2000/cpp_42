@@ -20,9 +20,32 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 	std::cout << "ScavTrap: " << _name << " was constructed" << std::endl;
 }
 
+ScavTrap::ScavTrap(ScavTrap const & rhs)
+{
+	std::cout << "ScavTrap " << "copy constructor called" << std::endl;
+	*this = rhs;
+}
+
 ScavTrap::~ScavTrap()
 {
 	std::cout << "ScavTrap: " << _name << " was destructed" << std::endl;
+}
+
+// ************************************************************************** //
+//                               OPERATOR OVERLOAD                            //
+// ************************************************************************** //
+
+ScavTrap&	ScavTrap::operator=(ScavTrap const & rhs)
+{
+	std::cout << "Assignment operator called" << std::endl;
+	if (this != &rhs)
+	{
+		_name = rhs._name;
+		_hit_points = rhs._hit_points;
+		_energy_points = rhs._energy_points;
+		_attack_damage = rhs._attack_damage;
+	}
+	return (*this);
 }
 
 // ************************************************************************** //
