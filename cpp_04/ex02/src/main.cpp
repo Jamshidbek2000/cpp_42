@@ -41,24 +41,26 @@ void	deep_copy_test()
 
 int main( void )
 {
-	// Animal* animals[N];
+	// AAnimal	test;
+	AAnimal* animals[N];
 
-	// std::cout << std::endl;
-	// for (int i = 0; i < N; i++)
-	// {
-	// 	if (i % 2 == 0)
-	// 		animals[i] = new Cat();
-	// 	else
-	// 		animals[i] = new Dog();
-	// 	std::cout << std::endl;
-	// }
-	// std::cout << std::endl << std::endl;
-	// for (int i = 0; i < N; i++)
-	// {
-	// 	delete animals[i];
-	// 	std::cout << std::endl;
-	// }
+	std::cout << std::endl;
+	for (int i = 0; i < N; i++)
+	{
+		if (i % 2 == 0)
+			animals[i] = new Cat();
+		else
+			animals[i] = new Dog();
+		std::cout << std::endl;
+	}
+	std::cout << std::endl << std::endl;
+	for (int i = 0; i < N; i++)
+	{
+		animals[i]->make_sound();
+		delete animals[i];
+		std::cout << std::endl;
+	}
 
-	deep_copy_test();
+	// deep_copy_test();
 	return (0); 
 }

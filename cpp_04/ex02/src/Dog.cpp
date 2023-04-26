@@ -4,7 +4,7 @@
 //                               CONSTRUCTORS/DESCTRUCTORS                    //
 // ************************************************************************** //
 
-Dog::Dog() : Animal("Dog")
+Dog::Dog() : AAnimal("Dog")
 {
 	brain = new Brain();
 	std::cout << "Dog is contructed" << std::endl;

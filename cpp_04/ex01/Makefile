@@ -1,4 +1,4 @@
-NAME = a.out
+NAME = deep_copy.out
 CC = g++
 RM = rm -rf
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -MD

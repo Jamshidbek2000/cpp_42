@@ -1,11 +1,11 @@
-NAME = a.out
+NAME = abstract_class.out
 CC = g++
 RM = rm -rf
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -MD
 
 SRC		=	main \
 			Brain \
-			Animal \
+			AAnimal \
 			Cat \
 			Dog \
 
