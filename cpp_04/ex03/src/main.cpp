@@ -35,6 +35,15 @@ void	test2()
 	magician->use(0, *magician);
 	std::cout << std::endl;
 
+	Character*	magician2 = new Character("Magician2");
+	*dynamic_cast<Character*>(magician2) = *dynamic_cast<Character*>(magician);
+	magician2->equip(yetti_library->createMateria("ice"));
+	magician2->use(0, *magician);
+	magician2->use(1, *yetti);
+	magician->use(0, *magician2);
+	magician->use(1, *yetti);
+
+	std::cout << std::endl;
 	magician->unequip(1);
 	magician->unequip(0);
 	
@@ -45,6 +54,7 @@ void	test2()
 
 	delete yetti;
 	delete magician;
+	delete magician2;
 }
 
 void	test1()
@@ -70,9 +80,9 @@ void	test1()
 
 int main( void )
 {
-	std::cout << std::endl;
+	std::cout << std::endl << "\t\t\t\tTEST1" << std::endl;
 	test1();
-	std::cout << std::endl;
+	std::cout << std::endl << "\t\t\t\tTEST2" << std::endl;
 	test2();
 	std::cout << std::endl;
 

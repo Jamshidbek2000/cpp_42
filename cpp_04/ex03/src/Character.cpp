@@ -45,7 +45,10 @@ Character& Character::operator=(Character const & rhs)
 		{
 			delete _inventory[i];
 			if (rhs._inventory[i] != NULL)
+			{
 				_inventory[i] = rhs._inventory[i]->clone();
+				// std::cout << "copied: " << _inventory[i]->getType() << std::endl;
+			}
 			else
 				_inventory[i] = NULL;
 		}

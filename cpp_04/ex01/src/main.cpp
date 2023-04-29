@@ -39,26 +39,34 @@ void	deep_copy_test()
 	std::cout << std::endl << std::endl;
 }
 
+void	test()
+{
+	Animal* animals[N];
+
+	std::cout << std::endl;
+	for (int i = 0; i < N; i++)
+	{
+		if (i % 2 == 0)
+			animals[i] = new Cat();
+		else
+			animals[i] = new Dog();
+		std::cout << std::endl;
+	}
+	std::cout << std::endl << std::endl;
+	for (int i = 0; i < N; i++)
+	{
+		delete animals[i];
+		std::cout << std::endl;
+	}
+}
+
 int main( void )
 {
-	// Animal* animals[N];
-
-	// std::cout << std::endl;
-	// for (int i = 0; i < N; i++)
-	// {
-	// 	if (i % 2 == 0)
-	// 		animals[i] = new Cat();
-	// 	else
-	// 		animals[i] = new Dog();
-	// 	std::cout << std::endl;
-	// }
-	// std::cout << std::endl << std::endl;
-	// for (int i = 0; i < N; i++)
-	// {
-	// 	delete animals[i];
-	// 	std::cout << std::endl;
-	// }
-
+	std::cout << std::endl << "\t\t\t\tTEST1" << std::endl;
+	test();
+	std::cout << std::endl << "\t\t\t\tTEST2" << std::endl;
 	deep_copy_test();
+	std::cout << std::endl;
+
 	return (0); 
 }

@@ -30,7 +30,7 @@ int main( void )
 		wrong_animals[i]->make_sound();	
 
 
-	// Freeing way
+	// Freeing
 	std::cout << std::endl << std::endl;
 	for (size_t i = 0; i < N; i++)
 		delete animals[i];

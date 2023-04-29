@@ -39,7 +39,7 @@ void	deep_copy_test()
 	std::cout << std::endl << std::endl;
 }
 
-int main( void )
+void	test()
 {
 	// AAnimal	test;
 	AAnimal* animals[N];
@@ -60,7 +60,15 @@ int main( void )
 		delete animals[i];
 		std::cout << std::endl;
 	}
+}
 
-	// deep_copy_test();
+int main( void )
+{
+	std::cout << std::endl << "\t\t\t\tTEST1" << std::endl;
+	test();
+	std::cout << std::endl << "\t\t\t\tTEST2" << std::endl;
+	deep_copy_test();
+	std::cout << std::endl;
+	
 	return (0); 
 }

@@ -50,7 +50,7 @@ void	Brain::add_new_idea(std::string const &idea)
 		return ;
 	}
 	ideas[index_to_add] = idea;
-	index_to_add = ++index_to_add % MAX_IDEAS;
+	index_to_add = (index_to_add + 1) % MAX_IDEAS;
 }
 
 void	Brain::print_ideas() const

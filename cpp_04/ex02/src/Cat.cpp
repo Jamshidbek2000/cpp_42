@@ -10,7 +10,7 @@ Cat::Cat() : AAnimal("Cat")
 	std::cout << "Cat is contructed" << std::endl;
 }
 
-Cat::Cat(Cat const & rhs)
+Cat::Cat(Cat const & rhs) : AAnimal(rhs)
 {
 	std::cout << "Cat copy constructor called" << std::endl;
 	*this = rhs;

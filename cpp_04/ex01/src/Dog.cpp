@@ -10,7 +10,7 @@ Dog::Dog() : Animal("Dog")
 	std::cout << "Dog is contructed" << std::endl;
 }
 
-Dog::Dog(Dog const & rhs)
+Dog::Dog(Dog const & rhs) : Animal(rhs)
 {
 	std::cout << "Dog copy constructor called" << std::endl;
 	*this = rhs;
