@@ -29,7 +29,6 @@ Ice&	Ice::operator=(Ice const & rhs)
 {
 	(void)rhs;
 	// std::cout << "Ice assignment operator is called" << std::endl;
-	_type = rhs._type;
 	return (*this);
 }
 

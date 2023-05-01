@@ -6,18 +6,16 @@
 class AAnimal
 {
 private:
+	AAnimal();
+	AAnimal(AAnimal const & rhs);
+	AAnimal&	operator=(AAnimal const & rhs);
 
 protected:
 	std::string type;
+	AAnimal(std::string const & type);
 
 public:
-	AAnimal();
-	AAnimal(std::string const & type);
-	AAnimal(AAnimal const & rhs);
 	virtual ~AAnimal();
-
-	AAnimal&	operator=(AAnimal const & rhs);
-
 	virtual void	make_sound() const = 0;
 };
 

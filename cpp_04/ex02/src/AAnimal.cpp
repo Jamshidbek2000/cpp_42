@@ -38,12 +38,3 @@ AAnimal&	AAnimal::operator=(AAnimal const & rhs)
 	}
 	return (*this);
 }
-
-// ************************************************************************** //
-//                               REST                                         //
-// ************************************************************************** //
-
-void	AAnimal::make_sound() const
-{
-	std::cout << "AAnimal sound" << std::endl;
-}

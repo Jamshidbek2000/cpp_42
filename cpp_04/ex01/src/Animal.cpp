@@ -6,12 +6,12 @@
 
 Animal::Animal() : type("Animal")
 {
-	std::cout << "Default Animal" << " is contructed" << std::endl;
+	std::cout << "Default Animal" << " is constructed" << std::endl;
 }
 
 Animal::Animal(std::string const & type) : type(type)
 {
-	std::cout << type << " Animal is contructed" << std::endl;
+	std::cout << type << " Animal is constructed" << std::endl;
 }
 
 Animal::Animal(Animal const & rhs)

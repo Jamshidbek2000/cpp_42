@@ -5,8 +5,6 @@
 
 class WrongAnimal
 {
-private:
-
 protected:
 	std::string type;
 

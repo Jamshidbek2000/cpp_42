@@ -5,10 +5,6 @@
 
 class WrongDog : public WrongAnimal
 {
-private:
-
-protected:
-
 public:
 	WrongDog();
 	WrongDog(WrongDog const & rhs);

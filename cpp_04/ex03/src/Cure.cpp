@@ -29,7 +29,6 @@ Cure&	Cure::operator=(Cure const & rhs)
 {
 	(void)rhs;
 	// std::cout << "Cure assignment operator is called" << std::endl;
-	_type = rhs._type;
 	return (*this);
 }
 

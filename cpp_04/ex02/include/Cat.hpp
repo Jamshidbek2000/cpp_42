@@ -8,7 +8,6 @@ class Cat : public AAnimal
 {
 private:
 	Brain	*brain;
-protected:
 
 public:
 	Cat();

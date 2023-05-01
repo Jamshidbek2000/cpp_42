@@ -7,12 +7,13 @@
 Dog::Dog() : Animal("Dog")
 {
 	brain = new Brain();
-	std::cout << "Dog is contructed" << std::endl;
+	std::cout << "Dog is constructed" << std::endl;
 }
 
 Dog::Dog(Dog const & rhs) : Animal(rhs)
 {
 	std::cout << "Dog copy constructor called" << std::endl;
+	brain = NULL;
 	*this = rhs;
 }
 

@@ -1,5 +1,5 @@
 NAME = deep_copy.out
-CC = g++
+CC = c++
 RM = rm -rf
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -MD
 

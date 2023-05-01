@@ -10,9 +10,10 @@ Dog::Dog() : AAnimal("Dog")
 	std::cout << "Dog is contructed" << std::endl;
 }
 
-Dog::Dog(Dog const & rhs) : AAnimal(rhs)
+Dog::Dog(Dog const & rhs) : AAnimal(rhs.type)
 {
 	std::cout << "Dog copy constructor called" << std::endl;
+	brain = NULL;
 	*this = rhs;
 }
 

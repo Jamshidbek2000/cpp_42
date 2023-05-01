@@ -32,6 +32,8 @@ MateriaSource::MateriaSource(AMateria* m)
 MateriaSource::MateriaSource(MateriaSource const & rhs)
 {
 	// std::cout << "Copy constructor is called" << std::endl;
+	for (int i = 0; i < LIB_SIZE; i++)
+		_library[i] = NULL;
 	*this = rhs;
 }
 
@@ -53,7 +55,8 @@ MateriaSource& MateriaSource::operator=(MateriaSource const & rhs)
 	{
 		for (int i = 0; i < LIB_SIZE; i++)
 		{
-			delete _library[i];
+			if (_library[i] != NULL)
+				delete _library[i];
 			if (rhs._library[i] != NULL)
 				_library[i] = rhs._library[i]->clone();
 			else

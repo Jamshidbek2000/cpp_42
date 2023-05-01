@@ -38,6 +38,10 @@ int main( void )
 	for (size_t i = 0; i < N; i++)
 		delete wrong_animals[i];
 
+	std::cout << std::endl;
+	WrongCat* cat = new WrongCat();
+	delete cat;
+
 	return (0); 
 
 }

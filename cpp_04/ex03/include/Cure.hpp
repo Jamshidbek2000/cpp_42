@@ -5,8 +5,6 @@
 
 class Cure : public AMateria
 {
-private:
-	
 public:
 	Cure();
 	Cure(Cure const & rhs);

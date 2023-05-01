@@ -1,5 +1,5 @@
 NAME = dynamic_dispatch.out
-CC = g++
+CC = c++
 RM = rm -rf
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -MD
 

@@ -15,6 +15,8 @@ Character::Character(std::string const & name) : _name(name)
 Character::Character(Character const & rhs)
 {
 	// std::cout << "Copy constructor is called" << std::endl;
+	for (int i = 0; i < INV_SIZE; i++)
+		_inventory[i] = NULL;
 	*this = rhs;
 }
 
@@ -43,7 +45,8 @@ Character& Character::operator=(Character const & rhs)
 		_name = rhs.getName();
 		for (size_t i = 0; i < INV_SIZE; i++)
 		{
-			delete _inventory[i];
+			if (_inventory[i] != NULL)
+				delete _inventory[i];
 			if (rhs._inventory[i] != NULL)
 			{
 				_inventory[i] = rhs._inventory[i]->clone();

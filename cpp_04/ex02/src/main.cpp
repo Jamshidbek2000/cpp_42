@@ -26,6 +26,7 @@ void	deep_copy_test()
 
 	std::cout << std::endl << std::endl;
 	tiger = simba;
+	Cat leo(simba);
 
 	std::cout << std::endl << std::endl;
 	simba.add_new_idea("Simba's new idea");
@@ -35,13 +36,29 @@ void	deep_copy_test()
 	std::cout << std::endl;
 	std::cout << "Tiger: " << std::endl;
 	tiger.print_ideas();
+
+	std::cout << std::endl;
+	std::cout << "Leo: " << std::endl;
+	leo.print_ideas();
+	leo.add_new_idea("Leo's new idea");
+
+	std::cout << std::endl;
+	std::cout << "Leo: " << std::endl;
+	leo.print_ideas();
 	
+	std::cout << std::endl;
+	std::cout << "Simba: " << std::endl;
+	simba.print_ideas();
+
+	std::cout << std::endl;
+	std::cout << "Tiger: " << std::endl;
+	tiger.print_ideas();
+
 	std::cout << std::endl << std::endl;
 }
 
 void	test()
 {
-	// AAnimal	test;
 	AAnimal* animals[N];
 
 	std::cout << std::endl;
@@ -56,7 +73,6 @@ void	test()
 	std::cout << std::endl << std::endl;
 	for (int i = 0; i < N; i++)
 	{
-		animals[i]->make_sound();
 		delete animals[i];
 		std::cout << std::endl;
 	}
@@ -69,6 +85,6 @@ int main( void )
 	std::cout << std::endl << "\t\t\t\tTEST2" << std::endl;
 	deep_copy_test();
 	std::cout << std::endl;
-	
+
 	return (0); 
 }

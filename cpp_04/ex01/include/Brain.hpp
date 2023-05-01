@@ -8,9 +8,10 @@
 class Brain
 {
 private:
-int			index_to_add;
+	int			index_to_add;
+
 protected:
-std::string ideas[MAX_IDEAS];
+	std::string ideas[MAX_IDEAS];
 
 public: 
 	Brain();
@@ -19,7 +20,7 @@ public:
 
 	Brain & operator=(Brain const &rhs);
 
-	void	print_ideas()const;
+	void	print_ideas() const;
 	void	add_new_idea(std::string const & idea);
 };
 

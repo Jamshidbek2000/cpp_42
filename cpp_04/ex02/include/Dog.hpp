@@ -8,7 +8,6 @@ class Dog : public AAnimal
 {
 private:
 	Brain	*brain;
-protected:
 
 public:
 	Dog();
