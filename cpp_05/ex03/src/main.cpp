@@ -18,6 +18,11 @@ int	main()
 	AForm* pardon;
 	AForm* testForm;
 
+	shrubbery = NULL;
+	robotomy = NULL;
+	pardon = NULL;
+	testForm = NULL;
+
 	try
 	{
 		shrubbery = tom.makeForm("shrubbery creation", "home");
@@ -71,6 +76,11 @@ int	main()
 	lars.executeForm(*robotomy);
 	hans.executeForm(*robotomy);
 	ellen.executeForm(*robotomy);
+
+	delete shrubbery;
+	delete robotomy;
+	delete pardon;
+	delete testForm;
 
 	return 0;
 }

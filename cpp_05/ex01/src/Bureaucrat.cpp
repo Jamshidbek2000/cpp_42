@@ -103,7 +103,7 @@ void	Bureaucrat::signForm(Form & form)
 		std::cerr << RED_TXT
 				<< "Bureaucrat " << name
 				<< " could not sign Form " << form.getName()
-				<< ". Because grade is not high enough"
+				<< ". Because " << e.what()
 				<< DEFAULT_TXT << std::endl;
 	}
 }

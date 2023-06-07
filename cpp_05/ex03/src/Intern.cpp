@@ -68,7 +68,7 @@ AForm* Intern::makeForm(std::string const & name, std::string const & target) co
 		default:
 			throw Intern::FormDoesNotExistException();
 	}
-	std::cout << "Intern creates " << name << std::endl;
+	std::cout << "Intern created " << name << std::endl;
 	return form;
 }
 

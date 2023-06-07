@@ -14,9 +14,9 @@ AForm::AForm() : name("Default AForm"), isSigned(false), requiredGrade(150)
 AForm::AForm(std::string const & inputName, int inputRequiredGrade) : name(inputName), isSigned(false), requiredGrade(inputRequiredGrade)
 {
 	if (inputRequiredGrade < 1)
-		throw(Bureaucrat::GradeTooHighException());
+		throw(AForm::GradeTooHighException());
 	if (inputRequiredGrade > 150)
-		throw(Bureaucrat::GradeTooLowException());
+		throw(AForm::GradeTooLowException());
 	std::cout << GREEN_TXT
 			<< "AForm " << name << ", parametric constructor is called"
 			<< DEFAULT_TXT << std::endl;
@@ -87,10 +87,7 @@ std::ostream& operator<<(std::ostream & os, AForm & Aform)
 void	AForm::beSigned(Bureaucrat & bureaucrat)
 {
 	if (isSigned == true)
-	{
-		std::cout << "Form " << name << " is already signed!" << std::endl;
-		return;
-	}
+		throw(AForm::FormIsAlreadySigned());
 	if (requiredGrade < bureaucrat.getGrade())
 		throw(AForm::LowGradeToSignException());
 	std::cout << "Bureaucrat " << bureaucrat.getName()
@@ -107,12 +104,28 @@ const char* AForm::FormIsNotSignedException::what() const throw()
 	return "Form is not signed!\n";
 }
 
-const char* AForm::LowGradeToSignException::what() const throw()
-{
-	return "Grade is lower than needed to sign the form!\n";
-}
-
 const char* AForm::LowGradeToExecuteException::what() const throw()
 {
 	return "Grade is lower than needed to execute the form!\n";
 }
+
+const char* AForm::GradeTooHighException::what() const throw()
+{
+	return "Grade is too high for the form!\n";
+}
+
+const char* AForm::GradeTooLowException::what() const throw()
+{
+	return "Grade is too low for the form!\n";
+}
+
+const char* AForm::FormIsAlreadySigned::what() const throw()
+{
+	return "Form is already signed!\n";
+}
+
+const char* AForm::LowGradeToSignException::what() const throw()
+{
+	return "Bureaucrat has lower grade than required!\n";
+}
+

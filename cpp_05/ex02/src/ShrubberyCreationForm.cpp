@@ -86,7 +86,7 @@ void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 		throw(AForm::FormIsNotSignedException());
 	if (executor.getGrade() > ShrubberyCreationForm::requiredExecGrade)
 		throw (AForm::LowGradeToExecuteException());
-	std::ofstream	outfile(target);
+	std::ofstream	outfile(target.c_str());
 	if (!outfile)
       throw std::runtime_error("Failed to open the file for writing.");
 	outfile << tree;

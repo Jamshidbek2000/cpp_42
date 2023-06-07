@@ -104,24 +104,24 @@ void	Bureaucrat::signForm(AForm & form)
 		std::cerr << RED_TXT
 				<< "Bureaucrat " << name
 				<< " could not sign Form " << form.getName()
-				<< ". Because grade is not high enough"
+				<< ". Because " << e.what()
 				<< DEFAULT_TXT << std::endl;
 	}
 }
 
-void				Bureaucrat::executeForm(AForm const & form)
+void	Bureaucrat::executeForm(AForm const & form)
 {
 	try
 	{
 		form.execute(*this);
 		std::cout << "Bureaucrat " << name
-				<< " signed " << form.getName() << std::endl;
+				<< " executed " << form.getName() << std::endl;
 	}
 	catch(const std::exception& e)
 	{
 		std::cerr << RED_TXT
 				<< "Bureaucrat " << name
-				<< " could not sign Form " << form.getName()
+				<< " could not execute Form " << form.getName()
 				<< ". Because " << e.what()
 				<< DEFAULT_TXT << std::endl;
 	}

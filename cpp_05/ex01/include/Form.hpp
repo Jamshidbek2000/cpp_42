@@ -25,6 +25,31 @@ class Form
 		int			getRequiredGrade();
 
 		void		beSigned(Bureaucrat & bureaucrat);
+
+		class GradeTooHighException : public std::exception
+		{
+			public:
+				virtual const char* what() const throw();
+		};
+
+		class GradeTooLowException : public std::exception
+		{
+			public:
+				virtual const char* what() const throw();
+		};
+
+		class LowGradeToSignException : public std::exception
+		{
+			public:
+				virtual const char* what() const throw();
+		};
+
+		class FormIsAlreadySigned : public std::exception
+		{
+			public:
+				virtual const char* what() const throw();
+		};
+
 };
 
 std::ostream& operator<<(std::ostream & os, Form const & form);

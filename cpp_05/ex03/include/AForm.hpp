@@ -28,6 +28,25 @@ class AForm
 
 		virtual void execute(Bureaucrat const & executor) const = 0;
 
+
+		class GradeTooHighException : public std::exception
+		{
+			public:
+				virtual const char* what() const throw();
+		};
+
+		class GradeTooLowException : public std::exception
+		{
+			public:
+				virtual const char* what() const throw();
+		};
+
+		class FormIsAlreadySigned : public std::exception
+		{
+			public:
+				virtual const char* what() const throw();
+		};
+
 		class FormIsNotSignedException : public std::exception
 		{
 			public:

@@ -14,9 +14,9 @@ Form::Form() : name("Default Form"), isSigned(false), requiredGrade(150)
 Form::Form(std::string const & inputName, int inputRequiredGrade) : name(inputName), isSigned(false), requiredGrade(inputRequiredGrade)
 {
 	if (inputRequiredGrade < 1)
-		throw(Bureaucrat::GradeTooHighException());
+		throw(Form::GradeTooHighException());
 	if (inputRequiredGrade > 150)
-		throw(Bureaucrat::GradeTooLowException());
+		throw(Form::GradeTooLowException());
 	std::cout << GREEN_TXT
 			<< "Form " << name << ", parametric constructor is called"
 			<< DEFAULT_TXT << std::endl;
@@ -86,13 +86,34 @@ std::ostream& operator<<(std::ostream & os, Form & form)
 void	Form::beSigned(Bureaucrat & bureaucrat)
 {
 	if (isSigned == true)
-	{
-		std::cout << "Form " << name << " is already signed!" << std::endl;
-		return;
-	}
+		throw(Form::FormIsAlreadySigned());
 	if (requiredGrade < bureaucrat.getGrade())
-		throw(Bureaucrat::GradeTooLowException());
+		throw(Form::LowGradeToSignException());
 	std::cout << "Bureaucrat " << bureaucrat.getName()
 			<< " signed Form " << name << std::endl;
 	isSigned = true;
+}
+
+// ************************************************************************** //
+//                               NESTED CLASS                                 //
+// ************************************************************************** //
+
+const char* Form::GradeTooHighException::what() const throw()
+{
+	return "Grade is too high for the form!\n";
+}
+
+const char* Form::GradeTooLowException::what() const throw()
+{
+	return "Grade is too low for the form!\n";
+}
+
+const char* Form::FormIsAlreadySigned::what() const throw()
+{
+	return "Form is already signed!\n";
+}
+
+const char* Form::LowGradeToSignException::what() const throw()
+{
+	return "Bureaucrat has lower grade than required!\n";
 }
