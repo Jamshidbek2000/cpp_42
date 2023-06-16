@@ -1,9 +1,10 @@
-NAME = a.out
+NAME = serializer
 CC = c++
 RM = rm -rf
-CFLAGS = -Wall -Wextra -Werror -Wno-unused -std=c++98 -MD
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -MD
 
-SRC		=	dcast \
+SRC		=	main \
+			Serializer	\
 			
 
 SRC_DIR = src/
